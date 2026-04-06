@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inventory & Billing System</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<h1 style="background:#3399ff;color:white;padding:15px;">
+Inventory & Billing System
+</h1>
+
+<!-- LOGIN -->
+<div class="container" id="login">
+<h2>Login</h2>
+<input id="username" placeholder="Username"><br>
+<input id="password" type="password" placeholder="Password"><br>
+<button onclick="login()">Login</button>
+</div>
+
+<!-- MENU -->
+<div class="container hidden" id="menu">
+<h2>Main Menu</h2>
+<button onclick="show('add')">Add Product</button>
+<button onclick="showInventory()">View Inventory</button>
+<button onclick="show('update')">Update Product</button>
+<button onclick="show('bill')">Generate Bill</button>
+<button onclick="show('search')">Search Product</button>
+<button onclick="showReport()">Report</button>
+<button onclick="show('changePass')">Change Password</button>
+<button onclick="logout()">Logout</button>
+</div>
+
+<!-- ADD -->
+<div class="container hidden" id="add">
+<h2>Add Product</h2>
+<input id="pid" placeholder="Product ID"><br>
+<input id="pname" placeholder="Product Name"><br>
+<input id="price" placeholder="Price"><br>
+<input id="qty" placeholder="Quantity"><br>
+<button onclick="addProduct()">Add</button>
+<button onclick="back()">Back</button>
+</div>
+
+<!-- UPDATE -->
+<div class="container hidden" id="update">
+<h2>Update Product</h2>
+<input id="uid" placeholder="Product ID"><br>
+<input id="uprice" placeholder="New Price"><br>
+<input id="uqty" placeholder="New Quantity"><br>
+<button onclick="updateProduct()">Update</button>
+<button onclick="back()">Back</button>
+</div>
+
+<!-- INVENTORY -->
+<div class="hidden" id="inventory">
+<h2>Inventory</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th><th>Name</th><th>Price</th><th>Qty</th><th>Delete</th>
+</tr>
+</thead>
+<tbody id="tableData"></tbody>
+</table>
+<br>
+<button onclick="back()">Back</button>
+</div>
+
+<!-- BILL -->
+<div class="container hidden" id="bill">
+<h2>Billing</h2>
+<input id="bid" placeholder="Product ID"><br>
+<input id="bqty" placeholder="Quantity"><br>
+<button onclick="generateBill()">Generate Bill</button>
+<h3 id="total"></h3>
+<button onclick="back()">Back</button>
+</div>
+
+<!-- SEARCH -->
+<div class="container hidden" id="search">
+<h2>Search Product</h2>
+<input id="sid" placeholder="Product ID"><br>
+<button onclick="searchProduct()">Search</button>
+<h3 id="result"></h3>
+<button onclick="back()">Back</button>
+</div>
+
+<!-- REPORT -->
+<div class="container hidden" id="report">
+<h2>Report</h2>
+<h3 id="reportData"></h3>
+<button onclick="back()">Back</button>
+</div>
+
+<!-- CHANGE PASSWORD -->
+<div class="container hidden" id="changePass">
+<h2>Change Password</h2>
+<input id="oldPass" type="password" placeholder="Old Password"><br>
+<input id="newPass" type="password" placeholder="New Password"><br>
+<button onclick="changePassword()">Change</button>
+<button onclick="back()">Back</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
